@@ -34,48 +34,50 @@ exports.registerUser = async (req, res, next) => {
         const token = user.getSignedJwtToken()
 
         if(user != null){
+
+            try{
+
+                const user = await UserModel.findOne({email:req.body.email})
+                if(!user) {
+                    return res.status(409)
+                              .json({
+                                success: false,
+                                message: `The email ${email} is not registered with Agoris`
+                              })  
+                }
+        
+                const token = totp.generate(process.env.OTP_SECRET)
+                console.log("token\n", token)
+        
+                const message = `Hello ${user.firstName}, \n\n Welcome to Agoris\n\n Please use this secure code\t${token}\t to verify your email inside the Agoris app. \n\n This code will expire in 10 minutes. \n\n\n From,\nThe Agoris Team`
+        
+                try{
+                    await sendEmail({
+                        email: req.body.email,
+                        subject: "Verify Your Email Address",
+                        message
+                    })
+                    // return res.status(200)
+                    //           .json({
+                    //             success: true,
+                    //             message: "A secure code has been sent to your email"
+                    //           })  
+                } catch(err){
+                    console.log(`err sending mail\n${err}`)
+                }
+        
+            } catch(error){
+                console.log(error);
+            }
+
             return res.status(201)
                       .json({
                         success: true,
-                        message: 'Registration successful',
+                        message: `Registration successful. A secure code has been sent to ${email} for verification`,
                         user,
                         token
-                      })
-                      
-                      try{
-
-                        const user = await UserModel.findOne({email:req.body.email})
-                        if(!user) {
-                            return res.status(409)
-                                      .json({
-                                        success: false,
-                                        message: `The email ${email} is not registered with Agoris`
-                                      })  
-                        }
-                
-                        const token = totp.generate(process.env.OTP_SECRET)
-                        console.log("token\n", token)
-                
-                        const message = `Hello ${user.firstName}, \n\n Welcome to Agoris\n\n Please use this secure code\t${token}\t to verify your email inside the Agoris app. \n\n This code will expire in 10 minutes. \n\n\n From,\nThe Agoris Team`
-                
-                        try{
-                            await sendEmail({
-                                email: req.body.email,
-                                subject: "Password Change Request",
-                                message
-                            })
-                            return res.status(200)
-                                      .json({
-                                        success: true,
-                                        message: "A secure code has been sent to your email"
-                                      })  
-                        } catch(err){
-                            console.log(`err sending mail\n${err}`)
-                        }
-                
-                    } catch(error){
-                        console.log(error);
-                    }          
+                      })      
+                          
         }
 
     } catch(error){
@@ -94,34 +96,38 @@ exports.registerUser = async (req, res, next) => {
 exports.verifyEmail = async (req, res, next) => {
     try{
 
+        const otp = null
+        const {one, two, three, four, five, six} = req.body
+        otp = one + two + three + four + five + six
+        console.log("otp rcvd from req body is:\t", otp)
+
         const user = await UserModel.findOne({email:req.body.email})
         if(!user) {
-            return res.status(409)
+            return res.status(404)
                       .json({
                         success: false,
                         message: `The email ${email} is not registered with Agoris`
                       })  
         }
 
-        const token = totp.generate(process.env.OTP_SECRET)
-        console.log("token\n", token)
-
-        // const isValid = totp.check(token, process.env.OTP_SECRET)
-        // console.log("isValid\n", isValid)
-
-        const message = `Hello ${user.firstName}, \n\n You are seeing this message because a forgot password request was initiated on your account. \n Use this secure code\t\n ${token}\t\nto proceed to resetting your password inside the Agoris app. \n\n This code will expire in 10 minutes. \n\n\n From,\nThe Agoris Team`
+        const message = `Hello ${user.firstName}, Your email has been verified. Happy Shopping on Agoris\n\n \n\n\n From,\nThe Agoris Team`
 
         try{
-            await sendEmail({
-                email: req.body.email,
-                subject: "Password Change Request",
-                message
-            })
-            return res.status(200)
-                      .json({
-                        success: true,
-                        message: "A secure code has been sent to your email"
-                      })  
+            const isValid = totp.check(otp, process.env.OTP_SECRET)
+            console.log("isValid otp\n", isValid)
+
+            if(isValid){
+                await sendEmail({
+                    email: req.body.email,
+                    subject: "Welcome to Agoris",
+                    message
+                })
+                return res.status(200)
+                          .json({
+                            success: true,
+                            message: "Verification Successful"
+                          })  
+            }
         } catch(err){
             console.log(`err sending mail\n${err}`)
         }
@@ -197,9 +203,6 @@ exports.forgotPassword = async (req, res, next) => {
 
         const token = totp.generate(process.env.OTP_SECRET)
         console.log("token\n", token)
-
-        // const isValid = totp.check(token, process.env.OTP_SECRET)
-        // console.log("isValid\n", isValid)
 
         const message = `Hello ${user.firstName}, \n\n You are seeing this message because a forgot password request was initiated on your account. \n Use this secure code\t\n ${token}\t\nto proceed to resetting your password inside the Agoris app. \n\n This code will expire in 10 minutes. \n\n\n From,\nThe Agoris Team`
 
