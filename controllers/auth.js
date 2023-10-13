@@ -96,9 +96,8 @@ exports.registerUser = async (req, res, next) => {
 exports.verifyEmail = async (req, res, next) => {
     try{
 
-        const otp = null
-        const {one, two, three, four, five, six} = req.body
-        otp = one + two + three + four + five + six
+        const { otp } = req.body
+        // otp = one + two + three + four + five + six
         console.log("otp rcvd from req body is:\t", otp)
 
         const user = await UserModel.findOne({email:req.body.email})
