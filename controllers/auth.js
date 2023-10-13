@@ -15,14 +15,11 @@ exports.registerUser = async (req, res, next) => {
 
         const {firstName, lastName, email, password} = req.body
 
-        // const validationResult = await registerSchema.validateAsync(req.body)
-
         if(!email || !password || !firstName || !lastName){
             return res.status(400)
                       .json({
                         success: false,
-                        message: `Please provide values for all the fields`,
-                        user: null
+                        message: `Please provide values for all the fields`
                       })  
         }
 
@@ -31,8 +28,7 @@ exports.registerUser = async (req, res, next) => {
             return res.status(409)
                       .json({
                         success: false,
-                        message: `This email ${email} is taken`,
-                        user: null
+                        message: `This email ${email} is taken`
                       })  
         }
 
@@ -78,8 +74,7 @@ exports.sendVerifyEmailOTP = async (req, res, next) => {
             return res.status(409)
                       .json({
                         success: false,
-                        message: `The email ${email} is not registered with Agoris`,
-                        user: null
+                        message: `The email ${email} is not registered with Agoris`
                       })  
         }
 
@@ -97,8 +92,7 @@ exports.sendVerifyEmailOTP = async (req, res, next) => {
             return res.status(200)
                       .json({
                         success: true,
-                        message: "A secure code has been sent to your email",
-                        user: null
+                        message: "A secure code has been sent to your email"
                       })  
         } catch(err){
             console.log(`err sending mail\n${err}`)
@@ -122,8 +116,7 @@ exports.verifyEmail = async (req, res, next) => {
             return res.status(409)
                       .json({
                         success: false,
-                        message: `The email ${email} is not registered with Agoris`,
-                        user: null
+                        message: `The email ${email} is not registered with Agoris`
                       })  
         }
 
@@ -144,8 +137,7 @@ exports.verifyEmail = async (req, res, next) => {
             return res.status(200)
                       .json({
                         success: true,
-                        message: "A secure code has been sent to your email",
-                        user: null
+                        message: "A secure code has been sent to your email"
                       })  
         } catch(err){
             console.log(`err sending mail\n${err}`)
@@ -171,8 +163,7 @@ exports.loginUser = async (req, res, next) => {
             return res.status(409)
                       .json({
                         success: false,
-                        message: `Invalid Credentials`,
-                        user: null
+                        message: `Invalid Credentials`
                       })  
         }
 
@@ -181,8 +172,7 @@ exports.loginUser = async (req, res, next) => {
             return res.status(409)
                       .json({
                         success: false,
-                        message: `Invalid Credentials`,
-                        user: null
+                        message: `Invalid Credentials`
                       })  
         }
 
@@ -218,8 +208,7 @@ exports.forgotPassword = async (req, res, next) => {
             return res.status(409)
                       .json({
                         success: false,
-                        message: "Invalid Credentials",
-                        user: null
+                        message: "Invalid Credentials"
                       })  
         }
 
@@ -240,8 +229,7 @@ exports.forgotPassword = async (req, res, next) => {
             return res.status(200)
                       .json({
                         success: true,
-                        message: "A secure code has been sent to your email",
-                        user: null
+                        message: "A secure code has been sent to your email"
                       })  
         } catch(err){
             console.log(`err sending mail\n${err}`)
