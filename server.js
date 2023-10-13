@@ -3,7 +3,7 @@ const dotenv = require('dotenv')
 const morgan = require('morgan')
 const connectDB = require ('./config/database')
 
-const config = dotenv.config({path: 'config/config.env'})
+dotenv.config({path: 'config/config.env'})
 connectDB()
 
 const auth = require('./routes/auth')
