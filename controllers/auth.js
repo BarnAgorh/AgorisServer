@@ -15,14 +15,6 @@ exports.registerUser = async (req, res, next) => {
 
         const {firstName, lastName, email, password} = req.body
 
-        if(!email || !password || !firstName || !lastName){
-            return res.status(400)
-                      .json({
-                        success: false,
-                        message: `Please provide values for all the fields`
-                      })  
-        }
-
         const doesExist = await UserModel.findOne({email: email});
         if(doesExist) {
             return res.status(409)
@@ -39,10 +31,7 @@ exports.registerUser = async (req, res, next) => {
             password: password,
         })
 
-        console.log('user to be created', user)
-
         const token = user.getSignedJwtToken()
-        console.log('jwt token\n', token)
 
         if(user != null){
             return res.status(201)
