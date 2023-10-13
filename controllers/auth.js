@@ -57,6 +57,14 @@ exports.registerUser = async (req, res, next) => {
                         subject: "Verify Your Email Address",
                         message
                     })
+
+                    return res.status(201)
+                      .json({
+                        success: true,
+                        message: `Registration successful. A secure code has been sent to ${email} for verification`,
+                        user,
+                        token
+                      })      
                     // return res.status(200)
                     //           .json({
                     //             success: true,
@@ -69,14 +77,6 @@ exports.registerUser = async (req, res, next) => {
             } catch(error){
                 console.log(error);
             }
-
-            return res.status(201)
-                      .json({
-                        success: true,
-                        message: `Registration successful. A secure code has been sent to ${email} for verification`,
-                        user,
-                        token
-                      })      
                           
         }
 
