@@ -1,8 +1,10 @@
 
 const UserModel = require('../models/User')
-const {totp} = require('otplib')
 
 const {registerSchema, loginSchema} = require('../utils/validation_schema')
+
+const OTPVerification = require("../models/OTPVerification")
+const bcrypt = require("bcryptjs")
 const sendEmail = require('../utils/email')
 
 /***
@@ -29,6 +31,7 @@ exports.registerUser = async (req, res, next) => {
             lastName: lastName,
             email: email,
             password: password,
+            verifiedEmail: false
         })
 
         const token = user.getSignedJwtToken()
@@ -45,13 +48,23 @@ exports.registerUser = async (req, res, next) => {
                                 message: `The email ${email} is not registered with Agoris`
                               })  
                 }
-        
-                const token = totp.generate(process.env.OTP_SECRET)
-                console.log("token\n", token)
-        
-                const message = `Hello ${user.firstName}, \n\n Welcome to Agoris\n\n Please use this secure code\t${token}\t to verify your email inside the Agoris app. \n\n This code will expire in 10 minutes. \n\n\n From,\nThe Agoris Team`
+            
+                const otp = `${Math.floor(100000 + Math.random() * 90000)}`
+                console.log('otp\t', otp)
+
+                const message = `Hello ${user.firstName}, \n\n Welcome to Agoris\n\n Please use this secure code\t${otp}\t to verify your email inside the Agoris app. \n\n This code will expire in 1 hour. \n\n\n From,\nThe Agoris Team`
         
                 try{
+                    const saltRounds = 10
+                    const hashedOtp = await bcrypt.hash(otp, saltRounds)
+
+                    OTPVerification.create({
+                        userId: user.id,
+                        otp: hashedOtp,
+                        createdAt: Date.now(),
+                        expiresAt: Date.now() + 3600000
+                    })
+
                     await sendEmail({
                         email: req.body.email,
                         subject: "Verify Your Email Address",
@@ -65,11 +78,6 @@ exports.registerUser = async (req, res, next) => {
                         user,
                         token
                       })      
-                    // return res.status(200)
-                    //           .json({
-                    //             success: true,
-                    //             message: "A secure code has been sent to your email"
-                    //           })  
                 } catch(err){
                     console.log(`err sending mail\n${err}`)
                 }
@@ -84,7 +92,6 @@ exports.registerUser = async (req, res, next) => {
         console.log(error);
     }
 
-
 }
 
 
@@ -96,11 +103,11 @@ exports.registerUser = async (req, res, next) => {
 exports.verifyEmail = async (req, res, next) => {
     try{
 
-        const { otp } = req.body
+        const { userId, otp, email } = req.body
         // otp = one + two + three + four + five + six
         console.log("otp rcvd from req body is:\t", otp)
 
-        const user = await UserModel.findOne({email:req.body.email})
+        const user = await UserModel.findOne({email})
         if(!user) {
             return res.status(404)
                       .json({
@@ -109,23 +116,51 @@ exports.verifyEmail = async (req, res, next) => {
                       })  
         }
 
-        const message = `Hello ${user.firstName}, Your email has been verified. Happy Shopping on Agoris\n\n \n\n\n From,\nThe Agoris Team`
-
         try{
-            const isValid = totp.check(otp, process.env.OTP_SECRET)
-            console.log("isValid otp\n", isValid)
 
-            if(isValid){
-                await sendEmail({
-                    email: req.body.email,
-                    subject: "Welcome to Agoris",
-                    message
-                })
-                return res.status(200)
-                          .json({
-                            success: true,
-                            message: "Verification Successful"
+            const record = await OTPVerification.find({userId})
+            if(record.length <= 0) {
+                return res.json(404)
+                          .status({
+                            success: false,
+                            message: "Invalid account or this OTP has already been used. Please sign up again or login"
                           })  
+            } else {
+                const {expiresAt} = record
+                const hashedOtp = record[0].otp
+
+                if(expiresAt < Date.now()){
+                    await record.deleteMany({userId})
+                    return res.json(404)
+                          .status({
+                            success: false,
+                            message: "This secure sode has expired. Please try another one"
+                          })  
+                } else {
+                    const isValid = bcrypt.compare(otp, hashedOtp)
+                    if(!isValid){
+                        return res.json(400)
+                          .status({
+                            success: false,
+                            message: "Incorrect OTP"
+                          })  
+                    } else {
+                        await UserModel.updateOne({_id: userId}, {verifiedEmail: true})
+                        await record.deleteMany({userId})
+                
+                        const message = `Hello ${user.firstName}, Your email has been verified. Happy Shopping on Agoris\n\n \n\n\n From,\nThe Agoris Team`
+                        await sendEmail({
+                            email: req.body.email,
+                            subject: "Welcome to Agoris",
+                            message
+                        })
+                        return res.status(200)
+                                .json({
+                                    success: true,
+                                    message: "Email Verification Successful"
+                                }) 
+                    }
+                }
             }
         } catch(err){
             console.log(`err sending mail\n${err}`)
@@ -199,9 +234,6 @@ exports.forgotPassword = async (req, res, next) => {
                         message: "Invalid Credentials"
                       })  
         }
-
-        const token = totp.generate(process.env.OTP_SECRET)
-        console.log("token\n", token)
 
         const message = `Hello ${user.firstName}, \n\n You are seeing this message because a forgot password request was initiated on your account. \n Use this secure code\t\n ${token}\t\nto proceed to resetting your password inside the Agoris app. \n\n This code will expire in 10 minutes. \n\n\n From,\nThe Agoris Team`
 

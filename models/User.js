@@ -30,8 +30,10 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    resetPasswordCode: String,
-    resetPasswordExpire: Date,
+    verifiedEmail: {
+        type: Boolean,
+        default: false
+    },
     updatedAt: {
         type: Date,
         default: Date.now()
