@@ -1,0 +1,149 @@
+[
+    {
+        "Real Estate": [
+            "For Sale",
+            "For Rent",
+            "Land",
+            "Commercial Property",
+            "Shortlet Property",
+            "New Buildings",
+            "Event Centers"
+        ]
+    },
+    {
+        "Vehicles": [
+            "Spare Parts",
+            "Cars",
+            "SUVs",
+            "Trucks",
+            "Buses",
+            "MotorBikes",
+            "Boats"
+        ]
+    },
+    {
+        "Phones": [
+            "Smartphones",
+            "Accessories",
+            "Smartwatches",
+            "Bluetooth Devices"
+        ]
+    },
+    {
+        "Tablets": [
+            "Tablets",
+            "Accessories"
+        ]
+    },
+    {
+        "Laptops": [
+            "Laptops",
+            "Spare parts",
+            "Accessories",
+            "Softwares"
+        ]
+    },
+    {
+        "Electronics": [
+            "Audio & Music",
+            "Television",
+            "Electrical Accessories",
+            "Computer Hardware",
+            "Video Games",
+            "Security & Surveillance",
+            "Headphones",
+            "Cameras"
+        ]
+    },
+    {
+        "Furniture": [
+            "Wood Works",
+            "Glass Wares",
+            "Home Accessories",
+            "Kitchen Appliances",
+            "Kitchenwares & Cookwares",
+            "Garden Supplies",
+            "Household Chemicals"
+        ]
+    },
+    {
+        "Health": [
+            "Vitamins & Supplements",
+            "Skincare",
+            "Tools & Accessories",
+            "Hair & Beauty",
+            "Fragrances",
+            "Sexual Wellness",
+            "Bath & Body",
+            "Make Up"
+        ]
+    },
+    {
+        "Fashion": [
+            "Men's Shoes",
+            "Women's Shoes",
+            "Men's Clothes",
+            "Women's Clothes",
+            "Watches",
+            "Bags",
+            "Clothing Accessories",
+            "Jewellery",
+            "Wedding Clothes"
+        ]
+    },
+    {
+        "Art": [
+            "Arts & Craft",
+            "Books",
+            "Board Games"
+        ]
+    },
+    {
+        "Sports": [
+            "Jerseys",
+            "Sports Equipments",
+            "Boots"
+        ]
+    },
+    {
+        "Kids Items": [
+            "Toys",
+            "Shoes",
+            "Clothes",
+            "Child Care",
+            "Children Furniture",
+            "Child Safety",
+            "Playground Equipment",
+            "Strollers"
+        ]
+    },
+    {
+        "Pets": [
+            "Dogs",
+            "Cats",
+            "Birds",
+            "Others"
+        ]
+    },
+    {
+        "FoodStuff": [
+            "Livestock",
+            "Food & Drinks",
+            "Seeds",
+            "Farm Machinery"
+        ]
+    },
+    {
+        "Equipment": [
+            "Medical Equipment",
+            "Safety Wears",
+            "Catering Tools",
+            "Store Equipment",
+            "Manufacturing",
+            "Stationery",
+            "Saloon Equipment",
+            "Stage Lighting & Effects",
+            "Printing Equipment"
+        ]
+    }
+]
