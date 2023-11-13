@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const sendEmail = async (options) => {
+const sendEmail = async (options, amp) => {
   
   const message = {
     from: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>`,
@@ -21,7 +21,10 @@ const sendEmail = async (options) => {
     text: options.message,
   }
 
-  const info = await transporter.sendMail(message)
+  const info = await transporter.sendMail(
+    message,
+    amp
+  )
 
   console.log("Message sent: %s", info.messageId);
 

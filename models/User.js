@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const shortId = require('shortid')
 
 const UserSchema = new mongoose.Schema({
     firstName: {
@@ -30,6 +31,19 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    referralCode: String,
+    referralPoints: {
+        type: Number,
+        default: 0
+    },
+    referralPointsUsed: {
+        type: Number,
+        default: 0
+    },
+    isVerifiedKYC: {
+        type: Boolean,
+        default: false
+    },
     updatedAt: {
         type: Date,
         default: Date.now()
@@ -40,6 +54,12 @@ const UserSchema = new mongoose.Schema({
 UserSchema.pre('save', async function(){
     let salt = await bcrypt.genSalt(10)
     this.password = await bcrypt.hash(this.password, salt)
+
+    const code = `ago${shortId.generate()}ris`
+    console.log('generated user referral code:\t', code)
+
+    this.referralCode = code
+
 })
 
 UserSchema.methods.getSignedJwtToken = function() {

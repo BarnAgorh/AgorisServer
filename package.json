@@ -1,7 +1,7 @@
 {
   "name": "agoris-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Agoris App Authentication Server",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -18,6 +18,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.4",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.9.6"
+    "nodemailer": "^6.9.6",
+    "shortid": "^2.2.16"
   }
 }
