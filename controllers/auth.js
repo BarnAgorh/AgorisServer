@@ -310,6 +310,14 @@ exports.changePassword = async (req, res, next) => {
 
     try{
 
+        if(!userId || !otp || !password){
+            return res.status(400)
+                      .json({
+                        success: false,
+                        message: `Please fill in all the fields`
+                      }) 
+        }
+
         const { userId, otp, password } = req.body
         const email = ''
 
