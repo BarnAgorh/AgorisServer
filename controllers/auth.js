@@ -310,6 +310,8 @@ exports.changePassword = async (req, res, next) => {
 
     try{
 
+        const { userId, otp, password } = req.body
+
         if(!userId || !otp || !password){
             return res.status(400)
                       .json({
@@ -318,7 +320,6 @@ exports.changePassword = async (req, res, next) => {
                       }) 
         }
 
-        const { userId, otp, password } = req.body
         const email = ''
 
         const user = await UserModel.findById(userId)
