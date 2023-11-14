@@ -13,6 +13,6 @@ router.post('/register', registerUser)
 router.post('/verify-email', verifyEmail)
 router.post('/login', loginUser)
 router.post('/forgot-password', forgotPassword)
-router.post('/change-password', changePassword)
+router.put('/change-password', changePassword)
 
 module.exports = router
