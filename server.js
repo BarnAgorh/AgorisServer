@@ -7,7 +7,7 @@ dotenv.config({path: 'config/config.env'})
 connectDB()
 
 const auth = require('./routes/auth')
-// const profile = require('./routes/profile')
+const profile = require('./routes/profile')
 
 const app = express()
 
@@ -19,7 +19,7 @@ app.get('/', (req, res, next)=>{
 })
 
 app.use('/api/v1/auth', auth)
-// app.use('/api/v1/profile', profile)
+app.use('/api/v1/profile', profile)
 
 const port = process.env.PORT || 5000
 

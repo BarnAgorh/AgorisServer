@@ -44,6 +44,15 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    city: {
+        type: String,
+    },
+    state: {
+        type: String,
+    },
+    phoneNumber: {
+        type: String,
+    },
     updatedAt: {
         type: Date,
         default: Date.now()
