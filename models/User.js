@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const shortId = require('shortid')
+// const shortId = require('shortid')
 
 const UserSchema = new mongoose.Schema({
     firstName: {
@@ -64,10 +64,10 @@ UserSchema.pre('save', async function(){
     let salt = await bcrypt.genSalt(10)
     this.password = await bcrypt.hash(this.password, salt)
 
-    const code = `ago${shortId.generate()}ris`
-    console.log('generated user referral code:\t', code)
+    // const code = `ago${shortId.generate()}ris`
+    // console.log('generated user referral code:\t', code)
 
-    this.referralCode = code
+    // this.referralCode = code
 
 })
 

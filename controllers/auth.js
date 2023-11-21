@@ -8,6 +8,8 @@ const PasswordChangeModel = require("../models/PasswordChangeModel")
 const bcrypt = require("bcryptjs")
 const sendEmail = require('../utils/email')
 
+const shortId = require('shortid')
+
 /***
  *  @description Create a new user 
  *  @route POST /api/v1/register
@@ -26,6 +28,9 @@ exports.registerUser = async (req, res, next) => {
                         message: `This email ${email} is taken`
                       })  
         }
+
+        const referralCode = `ago${shortId.generate()}ris`
+        console.log('generated user referral code:\t', referralCode)
 
         const user = await UserModel.create({
             firstName: firstName,
@@ -53,12 +58,7 @@ exports.registerUser = async (req, res, next) => {
                 const otp = `${Math.floor(100000 + Math.random() * 90000)}`
                 console.log('otp\t', otp)
 
-                const message = `
-                    Hello ${user.firstName}, \n\n 
-                    Welcome to Agoris\n\n Please use this secure code\t${otp}\t to verify your email inside the Agoris app. \n\n 
-                    This code will expire in 1 hour. \n\n\n 
-                    From,\nThe Agoris Team
-                `
+                const message = `Hello ${user.firstName}, \n\n Welcome to Agoris\n\n Please use this secure code\t${otp}\t to verify your email inside the Agoris app. \n\n This code will expire in 1 hour. \n\n\n From,\nThe Agoris Team`
         
                 try{
                     const saltRounds = 10
@@ -82,6 +82,7 @@ exports.registerUser = async (req, res, next) => {
                         success: true,
                         message: `Registration successful. A secure code has been sent to ${email} for verification`,
                         user,
+                        referralCode,
                         token
                       })      
                 } catch(err){
@@ -206,7 +207,7 @@ exports.loginUser = async (req, res, next) => {
 
         const user = await UserModel.findOne({email: validationResult.email}).select('+password')
         if(!user) {
-            return res.status(409)
+            return res.status(404)
                       .json({
                         success: false,
                         message: `Invalid Credentials`
