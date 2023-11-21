@@ -22,10 +22,10 @@ exports.protect = async (req, res, next) => {
             token,
             process.env.JWT_SECRET
         )
-        console.log('decodedToken:\t', decodedToken)
+        // console.log('decodedToken:\t', decodedToken)
 
         req.user = User.findById(decodedToken.id)
-        console.log('req.user{\t', req.user)
+        // console.log('req.user{\t', req.user)
 
         next()
     } catch (error) {
