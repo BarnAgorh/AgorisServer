@@ -8,7 +8,7 @@ const {
     updateMyProfile,
 } = require('../controllers/profile')
 
-router.get('/my-profile', protect, getMyProfile)
+router.post('/my-profile', protect, getMyProfile)
 router.put('/update-profile', protect, updateMyProfile)
 
 module.exports = router
