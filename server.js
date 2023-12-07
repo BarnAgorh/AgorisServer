@@ -1,3 +1,4 @@
+const http = require('http')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
@@ -8,8 +9,12 @@ connectDB()
 
 const auth = require('./routes/auth')
 const profile = require('./routes/profile')
+const chats = require('./routes/chats')
+const products = require('./routes/products')
+// const notifications = require('./routes/notifications')
 
 const app = express()
+const server = http.createServer(app)
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -20,10 +25,13 @@ app.get('/', (req, res, next)=>{
 
 app.use('/api/v1/auth', auth)
 app.use('/api/v1/user', profile)
+app.use('/api/v1/chats', chats)
+app.use('/api/v1/products', products)
+// app.use('/api/v1/notifications', notifications)
 
 const port = process.env.PORT || 5000
 
-const server = app.listen(port, ()=>{
+server.listen(port, ()=>{
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`)
 })
 

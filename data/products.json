@@ -1,0 +1,62 @@
+[
+    {
+        "_id": "65708491466cdeda2cce9183",
+        "vendorId": "655c7ef8744cabaea0910af9", 
+        "title": "Apple iPhone 15 Pro Max",
+        "category": "Phones",
+        "subCategory": "SmartPhones",
+        "negotiable": false,
+        "price": "30000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/0390262/1.jpg?8984",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/29/0390262/1.jpg?0127",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/97/8290262/1.jpg?6242"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "The iPhone 15 Pro Max uses Titanium for its frame, which is lighter and stronger than before. The iPhone 15 Pro Max is powered by the A17 Pro chip, a 3nm processor that promises improved performance. A new 6-core GPU that promises the best gaming performance on a phone, complete with ray tracing. The new Action button is coming to the iPhone 15 Pro Max that launches the camera, voice recorder and any app you want, in addition to muting calls.",
+        "brand": "Apple",
+        "model": "iPhone 15",
+        "color": "Matte-Black",
+        "type": "Phones"
+    },
+    {
+        "_id": "6570866246cc0c28e5533e2c",
+        "vendorId": "6570821c083cd41e968b986f", 
+        "title": "Apple iPhone 15 Pro Max",
+        "category": "Phones",
+        "subCategory": "SmartPhones",
+        "negotiable": false,
+        "price": "30000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/0390262/1.jpg?8984",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/29/0390262/1.jpg?0127",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/97/8290262/1.jpg?6242"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "The iPhone 15 Pro Max uses Titanium for its frame, which is lighter and stronger than before. The iPhone 15 Pro Max is powered by the A17 Pro chip, a 3nm processor that promises improved performance. A new 6-core GPU that promises the best gaming performance on a phone, complete with ray tracing. The new Action button is coming to the iPhone 15 Pro Max that launches the camera, voice recorder and any app you want, in addition to muting calls.",
+        "brand": "Apple",
+        "model": "iPhone 15",
+        "color": "Matte-Black",
+        "type": "Phones"
+    },
+    {
+        "_id": "6570868ef98082c922ffcccd",
+        "vendorId": "655c7ef8744cabaea0910af9", 
+        "title": "Apple iPhone 15 Pro Max",
+        "category": "Phones",
+        "subCategory": "SmartPhones",
+        "negotiable": false,
+        "price": "30000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/0390262/1.jpg?8984",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/29/0390262/1.jpg?0127",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/97/8290262/1.jpg?6242"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "The iPhone 15 Pro Max uses Titanium for its frame, which is lighter and stronger than before. The iPhone 15 Pro Max is powered by the A17 Pro chip, a 3nm processor that promises improved performance. A new 6-core GPU that promises the best gaming performance on a phone, complete with ray tracing. The new Action button is coming to the iPhone 15 Pro Max that launches the camera, voice recorder and any app you want, in addition to muting calls.",
+        "brand": "Apple",
+        "model": "iPhone 15",
+        "color": "Matte-Black",
+        "type": "Phones"
+    }
+]
