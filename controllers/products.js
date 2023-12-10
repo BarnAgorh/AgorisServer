@@ -1,6 +1,6 @@
 const ProductsModel = require('../models/Products')
 const UserModel = require('../models/User')
-const NotificationsModel = require('../models/Notifications')
+const NotificationsModel = require('../models/Offers')
 
 /***
  *  @description Get all products listed
@@ -78,13 +78,9 @@ exports.makeOffer = async (req, res, next) => {
         const firstName = foundUser[0].firstName
         const lastName = foundUser[0].lastName
         const userPhoneNumber = foundUser[0].phoneNumber
-        console.log(`email:\t${firstName}`)
-        console.log(`phoneNumber:\t${userPhoneNumber}`)
 
         const productTitle = foundProduct[0].title
         const image = foundProduct[0].images[0]
-        console.log(`found product image:\t${image}`)
-        console.log(`product title:\t${productTitle}`)
 
         const offer = await NotificationsModel.create({
             firstName,
