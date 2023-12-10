@@ -1,4 +1,4 @@
-const NotificationsModel = require('../models/Offers')
+const OffersModel = require('../models/Offers')
 
 /***
  *  @description Get all products listed
@@ -12,7 +12,7 @@ exports.getMyOffers = async (req, res, next) => {
         console.log('currentUserId:\t', vendorId)
 
         const offers = await OffersModel.find({vendorId})
-        console.log('my notifications:\n', notifications)
+        console.log('my offers:\n', offers)
 
         if(!offers) {
             return res.status(404)
