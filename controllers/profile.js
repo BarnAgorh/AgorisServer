@@ -78,3 +78,44 @@ exports.updateMyProfile = async (req, res, next) => {
     }
 
 }
+
+exports.setFCMPushTokenOnUser = async (req, res, next) => {
+
+    try{
+
+        const {userId, fcmToken} = req.body
+
+        const fieldsToUpdate = {fcmToken}
+
+        try{
+            const user = await User.findById(userId)
+            if(!user){
+                return res.status(404)
+                          .json({
+                            success: false,
+                            message: "No such user exists"
+                          })   
+            }
+            console.log('found user profile to update:\n', user)
+
+            const updatedUser = await User.findByIdAndUpdate(userId, fieldsToUpdate, {
+                new: true,
+                runValidators: true,
+            })
+            if(updatedUser){
+                return res.status(200)
+                          .json({
+                            success: true,
+                            message: "Your FCM Push Token has Been Saved Successfully",
+                            user: updatedUser
+                          })
+            }
+        } catch(err){
+            console.log(err)
+        }
+
+    } catch(error){
+        console.log(error);
+    }
+
+}

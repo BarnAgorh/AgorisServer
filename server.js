@@ -11,7 +11,7 @@ const auth = require('./routes/auth')
 const profile = require('./routes/profile')
 const chats = require('./routes/chats')
 const products = require('./routes/products')
-// const notifications = require('./routes/notifications')
+const notifications = require('./routes/offers')
 
 const app = express()
 const server = http.createServer(app)
@@ -27,7 +27,7 @@ app.use('/api/v1/auth', auth)
 app.use('/api/v1/user', profile)
 app.use('/api/v1/chats', chats)
 app.use('/api/v1/products', products)
-// app.use('/api/v1/notifications', notifications)
+app.use('/api/v1/notifications', notifications)
 
 const port = process.env.PORT || 5000
 

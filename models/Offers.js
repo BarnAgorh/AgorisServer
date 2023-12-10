@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const NotificationsSchema = new mongoose.Schema({
+const OffersSchema = new mongoose.Schema({
    vendorId: {
     type: mongoose.Schema.ObjectId,
     required: true
@@ -37,6 +37,10 @@ const NotificationsSchema = new mongoose.Schema({
     type: String,
     required: true
    },
+   createdAt: {
+      type: Date,
+      default: Date.now()
+   }
 })
 
-module.exports = mongoose.model('Notifications', NotificationsSchema)
+module.exports = mongoose.model('Offers', OffersSchema)
