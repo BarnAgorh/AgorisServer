@@ -7,4 +7,4 @@ const PasswordChangeSchema = new mongoose.Schema({
     expiresAt: Date
 })
 
-module.exports = mongoose.model("PasswordChangeModel", PasswordChangeSchema)
+module.exports = mongoose.model("PasswordChange", PasswordChangeSchema)

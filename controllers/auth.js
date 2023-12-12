@@ -4,7 +4,7 @@ const UserModel = require('../models/User')
 const {registerSchema, loginSchema} = require('../utils/validation_schema')
 
 const OTPVerification = require("../models/OTPVerification")
-const PasswordChangeModel = require("../models/PasswordChangeModel")
+const PasswordChangeModel = require("../models/PasswordChange")
 const bcrypt = require("bcryptjs")
 const sendEmail = require('../utils/email')
 

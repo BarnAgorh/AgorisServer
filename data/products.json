@@ -20,43 +20,263 @@
         "type": "Phones"
     },
     {
-        "_id": "6570866246cc0c28e5533e2c",
-        "vendorId": "6570821c083cd41e968b986f", 
-        "title": "Apple iPhone 15 Pro Max",
-        "category": "Phones",
-        "subCategory": "SmartPhones",
+        "_id": "6576f9a9feac2078009296ca",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Hp Stream 11 Intel Celeron D/C 4GB RAM- 64GB HDD WIN 10+ BAG",
+        "category": "Laptops",
+        "subCategory": "Laptops",
         "negotiable": false,
-        "price": "30000",
+        "price": "101,000",
         "images": [
-            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/0390262/1.jpg?8984",
-            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/29/0390262/1.jpg?0127",
-            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/97/8290262/1.jpg?6242"
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/15/7778032/1.jpg?6842",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/15/7778032/2.jpg?6842",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/15/7778032/3.jpg?6842"
         ],
         "vendorPhoneNumber": "09165349017",
-        "description": "The iPhone 15 Pro Max uses Titanium for its frame, which is lighter and stronger than before. The iPhone 15 Pro Max is powered by the A17 Pro chip, a 3nm processor that promises improved performance. A new 6-core GPU that promises the best gaming performance on a phone, complete with ray tracing. The new Action button is coming to the iPhone 15 Pro Max that launches the camera, voice recorder and any app you want, in addition to muting calls.",
-        "brand": "Apple",
-        "model": "iPhone 15",
-        "color": "Matte-Black",
-        "type": "Phones"
+        "description": "STREAM 11 INCH LAPTOP\n64GB HARFD DRIVE SPACE\n4GB RAM \nFAST AND MOBILE",
+        "brand": "Hp",
+        "model": "Stream 11",
+        "color": "Black",
+        "type": "Laptop"
     },
     {
-        "_id": "6570868ef98082c922ffcccd",
-        "vendorId": "655c7ef8744cabaea0910af9", 
-        "title": "Apple iPhone 15 Pro Max",
-        "category": "Phones",
-        "subCategory": "SmartPhones",
-        "negotiable": false,
-        "price": "30000",
+        "_id": "6576fb52760610b8d36c00ff",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Wireless Rechargeable Mouse 2.4G Plus Bluetooth 2 Modes",
+        "category": "Laptops",
+        "subCategory": "Accessories",
+        "negotiable": true,
+        "price": "3,430",
         "images": [
-            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/0390262/1.jpg?8984",
-            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/29/0390262/1.jpg?0127",
-            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/97/8290262/1.jpg?6242"
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/541137/1.jpg?5199",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/541137/2.jpg?2150",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/541137/3.jpg?2150"
         ],
         "vendorPhoneNumber": "09165349017",
-        "description": "The iPhone 15 Pro Max uses Titanium for its frame, which is lighter and stronger than before. The iPhone 15 Pro Max is powered by the A17 Pro chip, a 3nm processor that promises improved performance. A new 6-core GPU that promises the best gaming performance on a phone, complete with ray tracing. The new Action button is coming to the iPhone 15 Pro Max that launches the camera, voice recorder and any app you want, in addition to muting calls.",
-        "brand": "Apple",
-        "model": "iPhone 15",
-        "color": "Matte-Black",
-        "type": "Phones"
+        "description": "Rechargeable Wireless Computer Mouse - This USB LED wireless mouse has a built-in rechargeable 500mA battery. If fully charged, it can be used for about 3 weeks; if the battery is low, the mouse light turns off and the cursor movement slows down or does not move. Please charge in time. Of course, this mouse also has an automatic power saving function. After the mouse is powered on for 8 minutes, if not in use, it will enter sleep mode.\n\n7 Colors RGB LED Breathing Light - This kind of light will not make you dazzling, but it can definitely increase the beauty of the product, especially at night, it can create a cool effect; As long as you turn on the light button, it will automatically switch between different light colors",
+        "brand": "N/A",
+        "model": "N/A",
+        "color": "Silver",
+        "type": "Accessories"
+    },
+    {
+        "_id": "6576fb44688ee54f8d7f9190",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "2IN1 Keyboard And Mouse Set With Wired 1 Keyboard 1 Mouse",
+        "category": "Laptops",
+        "subCategory": "Accessories",
+        "negotiable": false,
+        "price": "7,480",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/57/8673852/1.jpg?8848",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/57/8673852/2.jpg?6589",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/57/8673852/4.jpg?6589"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "Features:【Standard 104-key design】Fully retain the keypad area to meet a variety of office input needs.【Hanging Injection Keycap】The font is clear, wear-resistant and durable. The response speed is fast, and the keys are resilient.【Ergonomic design】Fits fingers and feels comfortable.[Plug and play] USB interface, no need to drive, easy to use.",
+        "brand": "Shiqiao",
+        "model": "LD-801",
+        "color": "Black",
+        "type": "Accessories"
+    },
+    {
+        "_id": "6576fb34601b8cc9e1dcc38f",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Mercury Maverick 1550VA UPS",
+        "category": "Laptops",
+        "subCategory": "Accessories",
+        "negotiable": false,
+        "price": "93,500",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/55/4017322/1.jpg?9453",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/55/4017322/1.jpg?9453",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/55/4017322/1.jpg?9453"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "Frequent power interruptions can lead to stress and delays in meeting project deadlines while working on your computer. The Mercury Maverick 1550VA line interactive UPS provides a reliable power back up that enables you save your work the moment there is power interruption or public power outage. It has a wide voltage input range of 140~300VAC with a transfer time of 2 – 6ms and is compatible with generators and the erratic public power supply.\n\nFeatures\n• Built in AVR with wide input range of 140~300VAC\n• Auto restart\n• Output short circuit protection\n• Overload protection\n• Overcharge protection\n• Sleek and compact design with CPU control\n• Green function ( No load cut off )",
+        "brand": "Mercury",
+        "model": "Maverick",
+        "color": "Black",
+        "type": "Accessories"
+    },
+    {
+        "_id": "6576fb196e2cbbf3777f5cfb",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Hp 250 G6, HP 240 G6, Hp 15-bs Laptop Battery JC04 JC03",
+        "category": "Laptops",
+        "subCategory": "Spare Parts",
+        "negotiable": false,
+        "price": "24,935",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/67/9788302/1.jpg?8245",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/67/9788302/2.jpg?9166",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/67/9788302/7.jpg?8245"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "The laptop battery is compatible with HP 240 G6 / 250 G6 / 255 G6 / 15-BS / 15-BW / 17-BS / 15Q-BU / 15G-BR / 17-AK / 15Q-BY.\n\n.It works with systems that uses JC03.\nJC04 is stronger and last longer",
+        "brand": "Hp",
+        "model": "HP 250G6/HP 240G6/255G6 /15-BS/15-BW/17-BS/15Q-BU/15G-BR/17-AK/15Q-BY",
+        "color": "Black",
+        "type": "Spare Parts"
+    },
+    {
+        "_id": "6576fb21330758f921b1c711",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Nexus 50\" UHD 4K Frameless Android Smart TV",
+        "category": "Electronics",
+        "subCategory": "Televisions",
+        "negotiable": false,
+        "price": "230,500",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/79/8002752/1.jpg?8878",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/79/8002752/2.jpg?8888",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/79/8002752/3.jpg?8897"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "50\" Nexus frameless android, smart tv going for a steal price",
+        "brand": "Nexus",
+        "model": "(U4K621B)SA",
+        "color": "Black",
+        "type": "Televisions"
+    },
+    {
+        "_id": "6576fb0a7d2effb3ba33098c",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Hisense 43 Inches 4K LED Smart TV",
+        "category": "Electronics",
+        "subCategory": "Televisions",
+        "negotiable": false,
+        "price": "215,513",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/2221601/1.jpg?3573",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/2221601/4.jpg?3573",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/76/2221601/5.jpg?3573"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "The Hisense 43-Inch Smart Full HD LED TV comes with a sleek design and is very portable for your home. Thinking of setting up a new home as a bachelor or spinster, we believe this Hisense 43-Inch Led TV will perfectly suit your budget or interior decoration plans.\nThe Hisense 43 Inch Smart Full HD LED TV comes in a sleek Black Color that fits into any background of your choice.\nWith sharp, powerful sound quality, you have at your fingertips a TV that wouldn't be needing any external audio devices like a Home Theatre or Sound System. \nWith Precision color mapping technology, the TV analyses the signal color by 36 degrees of hues, 10 degrees of brightness, and 5 degrees of saturation, then presents the color as real as possible.\nWith the inbuilt satellite, you can connect your TV to the internet and access a wide array of internet services. Stream music and video on demand, stream football matches, get updates and more.\nWith the designated button on the remote for all your favorite streaming apps, you are just one button away from the best streaming content, no matter what you are watching or where you are on the TV  interface.",
+        "brand": "Hisense",
+        "model": "A6H",
+        "color": "Black",
+        "type": "Televisions"
+    },
+    {
+        "_id": "6576faff4d87efc005760578",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "LG 32 Inch LM637 Series FHD Smart TV",
+        "category": "Electronics",
+        "subCategory": "Televisions",
+        "negotiable": false,
+        "price": "219,900",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/38/8824832/1.jpg?4558",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/38/8824832/3.jpg?4558",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/38/8824832/6.jpg?4558"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "The LG 32 Inch LM637 Series FHD Smart TV is a sleek and stylish television that offers impressive picture quality and a range of smart features. With its Full HD resolution (1920 x 1080 pixels), this TV delivers sharp and clear images that bring your favorite shows and movies to life. It also has a high refresh rate and a wide viewing angle, so you can enjoy smooth, vibrant visuals from almost any position in the room. As a smart TV, the LG LM637 Series offers a variety of online entertainment options. You can access popular streaming services like Netflix, Hulu as well as a range of apps and games.\n\n The TV also comes with built-in WiFi, so you can easily connect to your home network and stream content wirelessly.",
+        "brand": "LG",
+        "model": "LM637",
+        "color": "Black",
+        "type": "Televisions"
+    },
+    {
+        "_id": "6576faee93de221cdf6a0399",
+        "vendorId": "655c7ef8744cabaea0910af9", 
+        "title": "DCQ D1 Power Banks 10000MAh Utra Slim Portable Fast Charger",
+        "category": "Electronics",
+        "subCategory": "Power Banks",
+        "negotiable": false,
+        "price": "5,800",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/5667461/1.jpg?1229",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/5667461/3.jpg?1229",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/5667461/2.jpg?1229"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "DCQ D1 Power-Bank, PowerCore Slim 10000, Ultra Slim Portable Charger, Compact 10000mAh External Battery, High-Speed PowerIQ Charging Technology for Mobile phones, ipad, and more.\n\nThe New Generation Power-Bank  (10000mAh) is light, convenient and portable. The dual USB output ports support multiple charging protocols, making it a partner in your travels that won't let you down.The Power-Bank  (10000mAh) can charge at up to 18W (12V, 1.5A/9V, 2.0A), cutting back significantly on charging time.",
+        "brand": "DCQ",
+        "model": "DCQ D1",
+        "color": "Black",
+        "type": "Power Banks"
+    },
+    {
+        "_id": "6576facbde7ab6c1faaa174b",
+        "vendorId": "655c7ef8744cabaea0910af9", 
+        "title": "360degree Panoramic 1080p Hidden Camera WiFi Fisheye Cctv",
+        "category": "Electronics",
+        "subCategory": "Security & Surveillance",
+        "negotiable": false,
+        "price": "20,000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/65/648206/1.jpg?0534",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/65/648206/2.jpg?0534",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/65/648206/1.jpg?0534"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "1080P HD Mini 360 Degree Panoramic Wifi Wireless IP Camera Fisheye Night Vision\n\nFeatures:\nInfrared night vision, 10 meters visible at night\nSupport Android, iPhone and PC monitor, wherever you can watch\n1080P HD, the resolution is 200Megapixel Circular image, the video and picture is more clear and smooth\nthan 720P or analog camera\n360 degree panoramic fisheye lens, just install 1pc panorama camera, you can view the whole room, equal to\n5 or 4pcs normal cameras, and no dead corner\n3D view, just like 3D Movie, you can view the picture from different angle, it shows more real, clear",
+        "brand": "G-3602",
+        "model": "CCTV",
+        "color": "Black/White",
+        "type": "Camera"
+    },
+    {
+        "_id": "6576fa9c00153ca945c4d076",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Hilook CCTV OUTDOOR BULLET CAMERA 1080P",
+        "category": "Electronics",
+        "subCategory": "Security & Surveillance",
+        "negotiable": false,
+        "price": "12,000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/83/360706/1.jpg?7626",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/83/360706/1.jpg?7626",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/83/360706/1.jpg?7626"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "2 megapixel high performance CMOS, turbo HD output, up to 1080p resolution, true day / night, DNR, smart IR, up to 20m distance, Ip66 weatherproof. It emphasises on the powerful all-seeing feature of its best-in-class video surveillance solutions with the core communication . generic is the Global Leader in advanced surveillance and security systems.  range of solutions and products are monitoring millions locations across the globe in diverse geographies from highly sensitive defense.",
+        "brand": "Hilook",
+        "model": "1080p",
+        "color": "White",
+        "type": "Camera"
+    },
+    {
+        "_id": "6576fab4deb53a0c4fcfe103",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "WEYON 819 3.1ch Blutooth Speaker Home Threater With Micro Function",
+        "category": "Electronics",
+        "subCategory": "Audio & Music",
+        "negotiable": false,
+        "price": "44,990",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/88/4008581/1.jpg?2567",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/88/4008581/4.jpg?2567",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/88/4008581/3.jpg?2567"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "With as much volume as you require to get you stepping to the music or to have your family fully tuned in to the entertainment on TV or for for a high-level gaming session. The bass sound is wonderful, it has a very clear sound. This speaker from WEYON is made for optimum performance with less concessions than is usually found giving your home or office limitless possibilities within its boundaries.",
+        "brand": "WEYON",
+        "model": "819",
+        "color": "Black",
+        "type": "Audio"
+    },
+    {
+        "_id": "6576fa2698d42559c871c7ea",
+        "vendorId": "6575ac35243e86af48264dd4", 
+        "title": "Hisense Bluetooth Sound Bar System-HS204",
+        "category": "Electronics",
+        "subCategory": "Audio & Music",
+        "negotiable": false,
+        "price": "34,500",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/98/434177/1.jpg?2769",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/98/434177/2.jpg?2769",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/98/434177/1.jpg?2769"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "Amplify the details with a Hisense sound bar The Hisense 1-piece 30W Sound Bar Home Theater System is the perfect audio solution to bring your music and movies to life. It features 2 channels, Bluetooth® connectivity to wirelessly stream music, an Optical and Audio Input, HDMI Output with ARC, and an easy, hassle-free setup. Use the remote control to operate the sound bar all from the comfort of your favorite chair and mount it on the wall to save space.",
+        "brand": "Hisense",
+        "model": "HS204",
+        "color": "Black",
+        "type": "Audio"
     }
 ]
