@@ -89,6 +89,7 @@ exports.setFCMPushTokenOnUser = async (req, res, next) => {
 
         try{
             const user = await User.findById(userId)
+            
             if(!user){
                 return res.status(404)
                           .json({

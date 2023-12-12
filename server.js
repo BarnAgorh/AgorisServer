@@ -12,6 +12,7 @@ const profile = require('./routes/profile')
 const chats = require('./routes/chats')
 const products = require('./routes/products')
 const offers = require('./routes/offers')
+const wishlist = require('./routes/wishlist')
 
 const app = express()
 const server = http.createServer(app)
@@ -28,6 +29,7 @@ app.use('/api/v1/user', profile)
 app.use('/api/v1/chats', chats)
 app.use('/api/v1/products', products)
 app.use('/api/v1/offers', offers)
+app.use('/api/v1/wishlist', wishlist)
 
 const port = process.env.PORT || 5000
 
