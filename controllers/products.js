@@ -37,7 +37,35 @@ exports.getAllProducts = async (req, res, next) => {
     } catch(error){
         console.log(error);
     }
+}
 
+exports.getSingleProduct = async (req, res, next) => {
+    try{
+
+        const {productId} = req.body
+        console.log('productId:\t', productId)
+
+        const product = await ProductsModel.find({_id: productId})
+        console.log('product details:\n', product)
+
+        if(!product) {
+            return res.status(404)
+                      .json({
+                        success: false,
+                        message: 'No product found'
+                      })  
+        }
+
+        return res.status(200)
+                  .json({
+                    success: true,
+                    message: `Product Retrieved Successfully`,
+                    product,
+                })    
+
+    } catch(error){
+        console.log(error);
+    }
 }
 
 exports.getProductsInCategory = async (req, res, next) => {

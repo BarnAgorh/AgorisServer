@@ -1,4 +1,5 @@
 const Wishlist = require('../models/Wishlist')
+const Product = require('../models/Products')
 
 /***
  *  @description Get all my products wishlisted
@@ -7,7 +8,7 @@ const Wishlist = require('../models/Wishlist')
  */
 exports.getMyWishlist = async (req, res, next) => {
     try{
-        const {userId} = req.body;
+        const {userId, productId} = req.body;
         
         let wishlist = await Wishlist.find({userId: userId})
         console.log('my wishlist items:\n', wishlist)
@@ -19,6 +20,12 @@ exports.getMyWishlist = async (req, res, next) => {
                         message: `No wishlist found`
                       })  
         }
+
+        let product =  await Product.findById({_id: productId})
+        console.log('found product to be wishlisted:\n', product)
+
+        wishlist.add(product)
+        console.log('wishlist after adding product details:\n', product)
 
         return res.status(200)
                   .json({
