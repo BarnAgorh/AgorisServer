@@ -381,9 +381,7 @@ exports.changePassword = async (req, res, next) => {
                             const hashedPassword = await bcrypt.hash(password, salt)
 
                             await UserModel.updateOne({_id: userId}, {password: hashedPassword})
-                            // await record.remove({})
-                            // await record.findByIdAndRemove({recordId})
-                            // await record.delete({userId})
+                            await record.deleteMany()
                     
                             const message = `Hello ${user.firstName}, Your password has been changed successfully. 
                                 Happy Shopping on Agoris\n\n \n\n\n From,\nThe Agoris Team`
