@@ -8,12 +8,12 @@ const Product = require('../models/Products')
  */
 exports.getMyWishlist = async (req, res, next) => {
     try{
-        const {userId, productId} = req.body;
-        
-        let wishlist = await Wishlist.find({userId: userId})
-        console.log('my wishlist items:\n', wishlist)
+        const {userId} = req.body;
 
-        if(!wishlist) {
+        let wishlist = []
+        let items = await Wishlist.find({userId: userId})
+
+        if(!items) {
             return res.status(404)
                       .json({
                         success: false,
@@ -21,18 +21,17 @@ exports.getMyWishlist = async (req, res, next) => {
                       })  
         }
 
-        let product =  await Product.findById({_id: productId})
-        console.log('found product to be wishlisted:\n', product)
-
-        wishlist.add(product)
-        console.log('wishlist after adding product details:\n', product)
+        for(let i = 0; i < items.length; i++){
+            let product =  await Product.findById({_id: items[i].productId})
+            wishlist.push(product)
+        }
 
         return res.status(200)
                   .json({
-            success: true,
-            message: `User Wishlist Retrieved Successfully`,
-            wishlist,
-        })    
+                    success: true,
+                    message: `User Wishlist Retrieved Successfully`,
+                    wishlist
+                  })    
 
     } catch(error){
         console.log(error);
@@ -52,7 +51,6 @@ exports.addProductToWishlist = async (req, res, next) => {
         console.log('foundProduct:\n', foundProduct)
 
         if(foundProduct.length != 0){
-            // await Wishlist.findByIdAndDelete({productId})
             return res.status(200)
                       .json({
                         success: true,
@@ -90,10 +88,8 @@ exports.removeFromMyWishlist = async (req, res, next) => {
     try{
         const {productId, userId} = req.body
 
-        const foundProductToRemove = await Wishlist.find({_id: productId,})
+        const foundProductToRemove = await Wishlist.find({_id: productId, userId: userId})
         console.log('foundProductToRemove:\n', foundProductToRemove)
-
-        console.log('foundProductToRemove.length:\t', foundProductToRemove.length)
 
         if(foundProductToRemove){
             await Wishlist.findByIdAndDelete({_id: productId})
@@ -101,7 +97,6 @@ exports.removeFromMyWishlist = async (req, res, next) => {
                       .json({
                         success: true,
                         message: 'This product has been removed succesfully from your wishlist',
-                        foundProduct: null
                       })  
         } else {
             return res.status(400)
@@ -116,13 +111,38 @@ exports.removeFromMyWishlist = async (req, res, next) => {
 }
 
 /***
- *  @description Remove all my products wishlisted
- *  @route POST /api/v1/wishlist
- *  @access Private
- */
-exports.removeAllFromWishlist = async (req, res, next) => {
-    try{
-    } catch(error){
-        console.log(error);
-    }
-}
+//  *  @description Remove all my products wishlisted
+//  *  @route POST /api/v1/wishlist
+//  *  @access Private
+//  */
+// exports.removeAllFromWishlist = async (req, res, next) => {
+//     try{
+
+//         const {userId} = req.body
+
+//         let wishlist = await Wishlist.findById({userId: userId})
+//         console.log('found user wishlist:\n', wishlist)
+
+//         if(wishlist.length > 0){
+//             let response = await Wishlist.deleteMany({userId: userId})
+//             console.log(response)
+
+//             return res.status(200)
+//                   .json({
+//                     success: true,
+//                     message: 'Your wishlisted items have been successfully deleted',
+//                     wishlist: []
+//                   }) 
+//         } 
+
+//         return res.status(200)
+//                   .json({
+//                     success: true,
+//                     message: 'Your wishlist is already empty',
+//                     wishlist: []
+//                   }) 
+
+//     } catch(error){
+//         console.log(error);
+//     }
+// }

@@ -7,12 +7,12 @@ const {
    addProductToWishlist,
    getMyWishlist,
    removeFromMyWishlist,
-   removeAllFromWishlist
+//    removeAllFromWishlist
 } = require('../controllers/wishlist')
 
 router.post('/create', protect, addProductToWishlist)
 router.post('/my-wishlist', protect, getMyWishlist)
 router.post('/remove-one', protect, removeFromMyWishlist)
-router.post('/remove-all', protect, removeAllFromWishlist)
+// router.delete('/remove-all', protect, removeAllFromWishlist)
 
 module.exports = router
