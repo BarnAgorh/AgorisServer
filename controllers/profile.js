@@ -5,7 +5,7 @@ const User = require('../models/User')
  *  @route GET /api/v1/profile
  *  @access Private
  */
-exports.getMyProfile = async (req, res, next) => {
+exports.getUserProfile = async (req, res, next) => {
     try{
         const { userId } = req.body
 

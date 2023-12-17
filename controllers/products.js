@@ -60,7 +60,7 @@ exports.getSingleProduct = async (req, res, next) => {
                   .json({
                     success: true,
                     message: `Product Retrieved Successfully`,
-                    product,
+                    product: product[0],
                 })    
 
     } catch(error){

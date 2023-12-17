@@ -23,6 +23,7 @@ exports.getMyWishlist = async (req, res, next) => {
 
         for(let i = 0; i < items.length; i++){
             let product =  await Product.findById({_id: items[i].productId})
+            console.log('items[i].productId', items[i].productId)
             wishlist.push(product)
         }
 
@@ -87,11 +88,14 @@ exports.addProductToWishlist = async (req, res, next) => {
 exports.removeFromMyWishlist = async (req, res, next) => {
     try{
         const {productId, userId} = req.body
+        console.log(req.body)
 
         const foundProductToRemove = await Wishlist.find({_id: productId, userId: userId})
         console.log('foundProductToRemove:\n', foundProductToRemove)
 
         if(foundProductToRemove){
+            console.log('foundProductToRemove[0]._id', foundProductToRemove[0]._id)
+
             await Wishlist.findByIdAndDelete({_id: productId})
             return res.status(200)
                       .json({
@@ -107,6 +111,7 @@ exports.removeFromMyWishlist = async (req, res, next) => {
         }
     } catch(error){
         console.log(error);
+        next()
     }
 }
 
