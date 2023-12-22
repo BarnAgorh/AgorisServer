@@ -7,12 +7,15 @@ const {
     getAllProducts,
     getSingleProduct,
     getProductsInCategory,
-    makeOffer
+    makeOffer,
+    chatSeller,
+    chatHistory
 } = require('../controllers/products')
 
 router.post('/all', protect, getAllProducts)
 router.post('/product-details', protect, getSingleProduct)
 router.post('/category-products', protect, getProductsInCategory)
 router.post('/make-offer', protect, makeOffer)
+router.post('/chat-seller', protect, chatSeller)
 
 module.exports = router

@@ -9,10 +9,10 @@ connectDB()
 
 const auth = require('./routes/auth')
 const profile = require('./routes/profile')
-const chats = require('./routes/chats')
 const products = require('./routes/products')
 const offers = require('./routes/offers')
-const wishlist = require('./routes/wishlist')
+const chats = require('./routes/chats')
+const myStore = require('./routes/my_store')
 
 const app = express()
 const server = http.createServer(app)
@@ -26,10 +26,10 @@ app.get('/', (req, res, next)=>{
 
 app.use('/api/v1/auth', auth)
 app.use('/api/v1/user', profile)
-app.use('/api/v1/chats', chats)
 app.use('/api/v1/products', products)
 app.use('/api/v1/offers', offers)
-app.use('/api/v1/wishlist', wishlist)
+app.use('/api/v1/chats', chats)
+app.use('/api/v1/my-store', myStore)
 
 const port = process.env.PORT || 5000
 

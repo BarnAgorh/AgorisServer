@@ -4,9 +4,9 @@ const router = express.Router()
 const {protect} = require('../middlewares/auth')
 
 const {
-    chatHistory,
-} = require('../controllers/chats')
+    getMyStoreItems,
+} = require('../controllers/my_store')
 
-router.post('/chat-history', protect, chatHistory)
+router.post('/my-store', protect, getMyStoreItems)
 
 module.exports = router

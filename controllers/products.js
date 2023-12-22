@@ -1,6 +1,7 @@
 const ProductsModel = require('../models/Products')
 const UserModel = require('../models/User')
 const NotificationsModel = require('../models/Offers')
+const ChatHistory = require('../models/ChatHistory')
 
 /***
  *  @description Get all products listed
@@ -39,6 +40,11 @@ exports.getAllProducts = async (req, res, next) => {
     }
 }
 
+/***
+ *  @description Get details of a product listed
+ *  @route POST /api/v1/product-details
+ *  @access Private
+ */
 exports.getSingleProduct = async (req, res, next) => {
     try{
 
@@ -68,8 +74,12 @@ exports.getSingleProduct = async (req, res, next) => {
     }
 }
 
+/***
+ *  @description Get categories of all products listed
+ *  @route POST /api/v1/products-category
+ *  @access Private
+ */
 exports.getProductsInCategory = async (req, res, next) => {
-
     try {
         const { category } = req.body
         const categoryProducts = await ProductsModel.find({category: category})
@@ -84,9 +94,13 @@ exports.getProductsInCategory = async (req, res, next) => {
     } catch(e){
         console.log(e)
     }
-
 }
 
+/***
+ *  @description Make a price offer on a product listed
+ *  @route POST /api/v1/make-offer
+ *  @access Private
+ */
 exports.makeOffer = async (req, res, next) => {
     try {
         const {userId, vendorId, productId, offerAmount} = req.body
@@ -130,35 +144,36 @@ exports.makeOffer = async (req, res, next) => {
                       })
         }
 
-        // const hasMadeOfferOnProduct = NotificationsModel.find({userId, productId})
-        // console.log(`hasMadeOfferOnProduct:\t${hasMadeOfferOnProduct}`)
-        // if(hasMadeOfferOnProduct){
-            // return res.status(400)
-            //           .json({
-            //             success: false,
-            //             message: 'You have already made an offer on this product'
-            //           })
-        // } else {
-            // const offer = await NotificationsModel.create({
-            //     firstName,
-            //     lastName,
-            //     userId,
-            //     vendorId,
-            //     productId,
-            //     productTitle,
-            //     image
-            // })
-            // if(offer != null){
-            //     return res.status(201)
-            //               .json({
-            //                 success: true,
-            //                 message: `You have successfully made an offer to purchase this product for ${offerAmount}`,
-            //                 offer
-            //               })
-            // }
-        // }
+    } catch(e){
+        console.log(e)
+    }
+}
+
+/***
+ *  @description Create a chat history with the vendor of the product listed
+ *  @route POST /api/v1/chat-seller
+ *  @access Private
+ */
+exports.chatSeller = async (req, res, next) => {
+
+    try {
+        const {userId, vendorId} = req.body
+        
+        const createHistory = await ChatHistory.create({
+            userId,
+            vendorId
+        })
+
+        if(createHistory != null){
+            return res.status(201)
+                      .json({
+                        success: true,
+                        message: 'Success',
+                      })
+        }
 
     } catch(e){
         console.log(e)
     }
+
 }
