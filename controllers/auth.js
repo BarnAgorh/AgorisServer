@@ -19,6 +19,7 @@ exports.registerUser = async (req, res, next) => {
     try{
 
         const {firstName, lastName, email, password,} = req.body
+        console.log('req payload sent in register:\n', req.body)
 
         const doesExist = await UserModel.findOne({email: email});
         if(doesExist) {
@@ -111,6 +112,7 @@ exports.verifyEmail = async (req, res, next) => {
     try{
 
         const { userId, otp, email } = req.body
+        console.log('req payload sent in verify email:\n', req.body)
 
         const user = await UserModel.findOne({email})
         if(!user) {
@@ -150,6 +152,8 @@ exports.verifyEmail = async (req, res, next) => {
                     if(expiresAt < Date.now()){
                         // await record.findByIdAndRemove({recordId})
                         // await record.remove({})
+                        await record.deleteMany({})
+
                         return res.json(404)
                             .status({
                                 success: false,
@@ -168,6 +172,7 @@ exports.verifyEmail = async (req, res, next) => {
                             // await record.remove({})
                             // await record.findByIdAndRemove({recordId})
                             // await record.delete({userId})
+                            await record.deleteMany({})
                     
                             const message = `Hello ${user.firstName}, Your email has been verified. Happy Shopping on Agoris\n\n \n\n\n From,\nThe Agoris Team`
                             await sendEmail({
@@ -203,6 +208,7 @@ exports.verifyEmail = async (req, res, next) => {
 exports.loginUser = async (req, res, next) => {
     try{
 
+        console.log('req payload sent in login:\n', req.body)
         const validationResult = await loginSchema.validateAsync(req.body)
 
         const user = await UserModel.findOne({email: validationResult.email}).select('+password')
@@ -215,6 +221,9 @@ exports.loginUser = async (req, res, next) => {
         }
 
         const isPasswordMatch = await user.matchPassword(req.body.password)
+        console.log('!isPasswordMatch', !isPasswordMatch)
+        console.log()
+
         if(!isPasswordMatch){
             return res.status(409)
                       .json({
@@ -226,14 +235,16 @@ exports.loginUser = async (req, res, next) => {
         const token = user.getSignedJwtToken()
         console.log('jwt token\n', token)
 
+        
         if(user != null){
+            console.log('user details to be logged in:\n', user)
             return res.status(200)
-                      .json({
-                        success: true,
-                        message: 'Login successful',
-                        user,
-                        token
-                      })  
+            .json({
+                success: true,
+                message: 'Login successful',
+                user,
+                token
+            })  
         }
 
     } catch(error){
@@ -250,6 +261,7 @@ exports.loginUser = async (req, res, next) => {
 exports.forgotPassword = async (req, res, next) => {
     try{
 
+        console.log('req payload sent in forgot password:\n', req.body)
         const user = await UserModel.findOne({email:req.body.email})
         if(!user) {
             return res.status(409)
@@ -362,6 +374,7 @@ exports.changePassword = async (req, res, next) => {
                     if(expiresAt < Date.now()){
                         // await record.findByIdAndRemove({recordId})
                         // await record.remove({})
+                        await record.deleteMany()
                         return res.json(404)
                             .status({
                                 success: false,

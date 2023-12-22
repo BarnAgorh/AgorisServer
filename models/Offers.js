@@ -35,7 +35,6 @@ const OffersSchema = new mongoose.Schema({
    },
    userPhoneNumber: {
     type: String,
-    required: true
    },
    createdAt: {
       type: Date,

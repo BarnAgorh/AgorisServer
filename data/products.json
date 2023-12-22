@@ -278,5 +278,45 @@
         "model": "HS204",
         "color": "Black",
         "type": "Audio"
+    },
+    {
+        "_id": "65854e0ac67e4a2d129a1255",
+        "vendorId": "6582fb23739f34bedd1d4452", 
+        "title": "FURGLE Custom Home & Studio Ergonomic Gaming Chair",
+        "category": "Furniture",
+        "subCategory": "Office Chairs",
+        "negotiable": true,
+        "price": "185,000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/06/7088601/1.jpg?3564",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/06/7088601/2.jpg?3564",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/06/7088601/3.jpg?3564"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "Furgle ergonomic gaming chair, all components are of the highest specifications in the industry and comply with European and American standards and SGS certification. Using super-resistant foam sponge, wear-resistant PU leather surface layer, and high-strength steel skeleton with a diameter of up to 22 mm, long-term sitting will not deform and wear, and can effectively reduce the fatigue of long-term games, creating a perfect streamlined aesthetic and Optimal comfort.\n【Multi-function & large size】The chair back can be adjusted 90 to 180 degrees backward and the height of the seat can be adjusted to increase the comfort level. You can enjoy the Rocking on the chair.\n【Quality Materials & Ergonomics】It is designed with a one-piece high-density sponge and carbon fiber texture. The stain-resistant and fade-resistant PU leather provide ultimate comfort and breathability. The sturdy metal frame bionics provides ergonomic support for the head, waist, and hips. The all-black gaming chair creates a classic aesthetic. The leather texture is clear and natural, with a clear and clean texture, revealing the noble and elegant quality.",
+        "brand": "Furgle",
+        "model": "Furgle 101",
+        "color": "White & Black",
+        "type": "Furniture"
+    },
+    {
+        "_id": "65855378a3a12a0d2ec77db4",
+        "vendorId": "6582fb23739f34bedd1d4452", 
+        "title": "Gaming Desk, 55 Inch Gaming Table With LED RGB Lights,1.4MTR",
+        "category": "Furniture",
+        "subCategory": "Office Chairs",
+        "negotiable": true,
+        "price": "170,000",
+        "images": [
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/32/1983502/1.jpg?5361",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/32/1983502/2.jpg?5361",
+            "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/32/1983502/3.jpg?5361"
+        ],
+        "vendorPhoneNumber": "09165349017",
+        "description": "RGB LIGHT EFFECT There are LED RGB lights on both sides of the gaming desktop. You can use the buttons to switch between RGB colors, 4 play modes and 10 play speeds according to your preferences. Modes including monochrome, breathing, flashing and Rotating.It can create a cool game atmosphere for you.\nLARGE GAMING DESK The size of the gaming desk is 55.1(L) x 23.6(W)x 28.7(H) Inch, and the desktop is large enough for all your gaming equipment. The MDF desktop is waterproof and abrasion resistant, and the matte texture of carbon fiber adds to the game style.\nMULTIFUNCTION The gaming table is equipped with headphone hook, double cable hole and cup holder, which can easily organize earphones, water cups and power cords for you. The neat desktop allows you to play more vividly!\nR SHAPED FRAME The R shaped desk legs of the gaming desk made of steel form a stable triangular structure, which can bear a maximum weight of 440 pound. The coating on the steel surface can prevent wear and rust. And the antipressure foot pads can prevent scratching the ground.\nELABORATE DESIGNFrom the desktop armor decoration to the printed design of the desk legs, and the ergonomic curved desktop, Mingyall gaming desk is committed to creating the most comfortable and immersive gaming experience for users.",
+        "brand": "Success interiors",
+        "model": "gy77",
+        "color": "Black",
+        "type": "Furniture"
     }
 ]
