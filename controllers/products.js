@@ -149,6 +149,25 @@ exports.makeOffer = async (req, res, next) => {
     }
 }
 
+exports.getMyProducts = async (req, res, next) => {
+    try {
+        const {vendorId} = req.body
+    
+        const products = await ProductsModel.find({vendorId})
+        console.log('my products items:\n', products)
+    
+        return res.status(200)
+                  .json({
+                    success: true,
+                    message: 'My Product Items Retrieved Succesfully',
+                    products
+                  })
+    
+    } catch(e){
+        console.log(e)
+    }
+}
+
 /***
  *  @description Create a chat history with the vendor of the product listed
  *  @route POST /api/v1/chat-seller

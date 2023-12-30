@@ -12,7 +12,6 @@ const profile = require('./routes/profile')
 const products = require('./routes/products')
 const offers = require('./routes/offers')
 const chats = require('./routes/chats')
-const myStore = require('./routes/my_store')
 
 const app = express()
 const server = http.createServer(app)
@@ -29,7 +28,6 @@ app.use('/api/v1/user', profile)
 app.use('/api/v1/products', products)
 app.use('/api/v1/offers', offers)
 app.use('/api/v1/chats', chats)
-app.use('/api/v1/my-store', myStore)
 
 const port = process.env.PORT || 5000
 
