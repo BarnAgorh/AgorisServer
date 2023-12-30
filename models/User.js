@@ -59,6 +59,10 @@ const UserSchema = new mongoose.Schema({
     },
     fcmToken: {
         type: String
+    },
+    reviews: {
+        type: [mongoose.Schema.ObjectId],
+        ref: 'Reviews'
     }
 })
 
